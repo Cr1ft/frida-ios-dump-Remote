@@ -4,12 +4,33 @@ Pull a decrypted IPA from a jailbroken device
 
 ## Usage
 
- 1. Install [frida](http://www.frida.re/) on device
- 2. `sudo pip install -r requirements.txt --upgrade`
- 3. Run usbmuxd/iproxy SSH forwarding over USB (Default 2222 -> 22). e.g. `iproxy 2222 22`
- 4. Run ./dump.py `Display name` or `Bundle identifier`
+frida-ios-dump (by AloneMonkey v2.0)
+
+positional arguments:
+  target                Bundle identifier or display name of the target app
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l, --list            List the installed apps
+  -o OUTPUT_IPA, --output OUTPUT_IPA
+                        Specify name of the decrypted IPA
+  -R REMOTE, --Remote REMOTE
+                        Specify Remote frida-server
+  -H SSH_HOST, --host SSH_HOST
+                        Specify SSH hostname
+  -p SSH_PORT, --port SSH_PORT
+                        Specify SSH port
+  -u SSH_USER, --user SSH_USER
+                        Specify SSH username
+  -P SSH_PASSWORD, --password SSH_PASSWORD
+                        Specify SSH password
+  -K SSH_KEY_FILENAME, --key_filename SSH_KEY_FILENAME
+                        Specify SSH private key file path
 
 For SSH/SCP make sure you have your public key added to the target device's ~/.ssh/authorized_keys file.
+
+python3 ./dump.py -R xxx.xxx.xxx.xxx:12345 -H xxx.xxx.xxx.xxx -p 22 -P alpine -o test xxxx
+Start the target app xxxx
 
 ```
 ./dump.py Aftenposten
