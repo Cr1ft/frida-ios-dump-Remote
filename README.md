@@ -4,29 +4,31 @@ Pull a decrypted IPA from a jailbroken device
 
 ## Usage
 
+```c
+ frida-ios-dump (by AloneMonkey v2.0)
 
-> frida-ios-dump (by AloneMonkey v2.0)
+ positional arguments:
+  target                Bundle identifier or display name of the target app
 
-> positional arguments:
->  target                Bundle identifier or display name of the target app
+ optional arguments:
+  -h, --help            show this help message and exit
+  -l, --list            List the installed apps
+  -o OUTPUT_IPA, --output OUTPUT_IPA
+                        Specify name of the decrypted IPA
+  -R REMOTE, --Remote REMOTE
+                        Specify Remote frida-server
+  -H SSH_HOST, --host SSH_HOST
+                        Specify SSH hostname
+  -p SSH_PORT, --port SSH_PORT
+                        Specify SSH port
+  -u SSH_USER, --user SSH_USER
+                        Specify SSH username
+  -P SSH_PASSWORD, --password SSH_PASSWORD
+                       Specify SSH password
+  -K SSH_KEY_FILENAME, --key_filename SSH_KEY_FILENAME
+                        Specify SSH private key file path
+···
 
-> optional arguments:
->  -h, --help            show this help message and exit
->  -l, --list            List the installed apps
->  -o OUTPUT_IPA, --output OUTPUT_IPA
->                        Specify name of the decrypted IPA
->  -R REMOTE, --Remote REMOTE
->                        Specify Remote frida-server
->  -H SSH_HOST, --host SSH_HOST
->                        Specify SSH hostname
->  -p SSH_PORT, --port SSH_PORT
->                        Specify SSH port
->  -u SSH_USER, --user SSH_USER
->                        Specify SSH username
->  -P SSH_PASSWORD, --password SSH_PASSWORD
->                        Specify SSH password
->  -K SSH_KEY_FILENAME, --key_filename SSH_KEY_FILENAME
->                        Specify SSH private key file path
 
 For SSH/SCP make sure you have your public key added to the target device's ~/.ssh/authorized_keys file.
 
